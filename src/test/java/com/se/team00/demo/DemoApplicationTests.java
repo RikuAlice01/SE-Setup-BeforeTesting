@@ -1,7 +1,7 @@
 package com.se.team00.demo;
 
-// import com.se.team00.demo.Entity.*;
-// import com.se.team00.demo.Repository.*;
+ import com.se.team00.demo.Entity.*;
+ import com.se.team00.demo.Repository.*;
 
 import org.junit.Test;
 

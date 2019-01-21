@@ -1,4 +1,4 @@
-package com.se.team00.demo;
+package com.se.team00.demo.Entity;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -28,5 +28,6 @@ public class Student {
 
     @NotNull(message = "lastName cannot be null")
     private  String lastName;
+
 
 } 

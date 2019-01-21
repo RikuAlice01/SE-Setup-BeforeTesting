@@ -8,8 +8,8 @@ import org.springframework.web.filter.CharacterEncodingFilter;
 
 import java.util.stream.Stream;
 
-// import com.se.team00.demo.Entity.*;
-// import com.se.team00.demo.Repository.*;
+ import com.se.team00.demo.Entity.*;
+ import com.se.team00.demo.Repository.*;
 
 @SpringBootApplication
 public class DemoApplication {
