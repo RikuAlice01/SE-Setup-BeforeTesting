@@ -1,6 +1,6 @@
-package com.se.team00.demo.repository;
+package com.se.team00.demo;
 
-import com.se.team00.demo.entity.Student;
+//import com.se.team00.demo.Entity.Student;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
