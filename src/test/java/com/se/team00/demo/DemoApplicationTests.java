@@ -1,6 +1,10 @@
 package com.se.team00.demo;
 
+// import com.se.team00.demo.Entity.*;
+// import com.se.team00.demo.Repository.*;
+
 import org.junit.Test;
+
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -22,9 +26,6 @@ import javax.validation.ValidatorFactory;
 
 import org.junit.Before;
 import org.junit.Test;
-
-import com.se.team00.demo.entity.Student;
-import com.se.team00.demo.repository.StudentRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;

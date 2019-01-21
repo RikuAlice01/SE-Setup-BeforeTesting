@@ -6,10 +6,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.filter.CharacterEncodingFilter;
 
-import com.se.team00.demo.entity.*;
-import com.se.team00.demo.repository.*;
 import java.util.stream.Stream;
 
+// import com.se.team00.demo.Entity.*;
+// import com.se.team00.demo.Repository.*;
 
 @SpringBootApplication
 public class DemoApplication {
