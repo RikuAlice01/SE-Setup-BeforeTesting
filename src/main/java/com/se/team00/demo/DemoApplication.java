@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.filter.CharacterEncodingFilter;
 
-import com.se.team00.demo.entity.*;
-import com.se.team00.demo.repository.*;
+import com.se.team00.demo.Entity.*;
+import com.se.team00.demo.Repository.*;
 import java.util.stream.Stream;
 
 
@@ -28,10 +28,10 @@ public class DemoApplication {
 				student.setLastName("sit");
 				student.setFirstName("siri");
 				studentRepository.save(student);
-		});
-		studentRepository.findAll().forEach(System.out::println);
-	};
-			}
+				});
+				studentRepository.findAll().forEach(System.out::println);
+		};
+	}
 	
 }
 
