@@ -62,6 +62,83 @@ public class DemoApplicationTests {
 		}
 	}
 
+	@Test
+	public void testStudentLastNameCannotBeNull() {
+		Student s = new Student();
+		s.setFirstName("Abcd");
+		s.setLastName(null);
+		s.setStudentId("B5900000");
+
+		try {
+			entityManager.persist(s);
+			entityManager.flush();
+
+			fail("Should not pass to this line");
+		} catch(javax.validation.ConstraintViolationException e) {
+			Set<ConstraintViolation<?>> violations = e.getConstraintViolations();
+			assertEquals(violations.isEmpty(), false);
+			assertEquals(violations.size(), 1);
+		}
+	}
+
+
+	@Test
+	public void testStudentIdNotBeFirstBMD() {
+		Student s = new Student();
+		s.setFirstName("Abcd");
+		s.setLastName("Abcd");
+		s.setStudentId("Z5900000");
+
+		try {
+			entityManager.persist(s);
+			entityManager.flush();
+
+			fail("Should not pass to this line");
+		} catch(javax.validation.ConstraintViolationException e) {
+			Set<ConstraintViolation<?>> violations = e.getConstraintViolations();
+			assertEquals(violations.isEmpty(), false);
+			assertEquals(violations.size(), 1);
+		}
+	}
+
+	@Test
+	public void testStudentIdLessThan8Character() {
+		Student s = new Student();
+		s.setFirstName("Abcd");
+		s.setLastName("Abcd");
+		s.setStudentId("Z590123");
+
+		try {
+			entityManager.persist(s);
+			entityManager.flush();
+
+			fail("Should not pass to this line");
+		} catch(javax.validation.ConstraintViolationException e) {
+			Set<ConstraintViolation<?>> violations = e.getConstraintViolations();
+			assertEquals(violations.isEmpty(), false);
+			assertEquals(violations.size(), 1);
+		}
+	}
+
+	@Test
+	public void testStudentIdAddTextCharacter() {
+		Student s = new Student();
+		s.setFirstName("Abcd");
+		s.setLastName("Abcd");
+		s.setStudentId("Z59012A4");
+
+		try {
+			entityManager.persist(s);
+			entityManager.flush();
+
+			fail("Should not pass to this line");
+		} catch(javax.validation.ConstraintViolationException e) {
+			Set<ConstraintViolation<?>> violations = e.getConstraintViolations();
+			assertEquals(violations.isEmpty(), false);
+			assertEquals(violations.size(), 1);
+		}
+	}
+
 	@Test(expected=javax.persistence.PersistenceException.class)
 	public void testIdMustBeUnique() {
 		Student s1 = new Student();
@@ -80,12 +157,6 @@ public class DemoApplicationTests {
 		entityManager.flush();
 
 		fail("Should not pass to this line");
-	}
-
-	@Test
-	public void whenMessageAssigned_thenItIsNotNull() {
-		String message = "hello there";
-		assertNotNull(message);
 	}
 
 }
