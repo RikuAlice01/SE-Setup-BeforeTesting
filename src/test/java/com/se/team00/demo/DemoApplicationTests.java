@@ -16,11 +16,11 @@ import javax.validation.ValidatorFactory;
 import java.util.Set;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+//import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.fail;
 
-import  com.se.team00.demo.Repository.StudentRepository;
-import  com.se.team00.demo.Entity.Student;
+ import com.se.team00.demo.Entity.*;
+ import com.se.team00.demo.Repository.*;
 
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
 
@@ -49,6 +49,11 @@ public class DemoApplicationTests {
 		s.setFirstName(null);
 		s.setLastName("Abcd");
 		s.setStudentId("B5900000");
+		
+		Subclas sc1 = new Subclas();
+		sc1.setSub("M1");
+		s.setSubclas(sc1);
+
 
 		try {
 			entityManager.persist(s);
@@ -68,6 +73,10 @@ public class DemoApplicationTests {
 		s.setFirstName("Abcd");
 		s.setLastName(null);
 		s.setStudentId("B5900000");
+
+		Subclas sc1 = new Subclas();
+		sc1.setSub("M1");
+		s.setSubclas(sc1);
 
 		try {
 			entityManager.persist(s);
@@ -89,6 +98,10 @@ public class DemoApplicationTests {
 		s.setLastName("Abcd");
 		s.setStudentId("Z5900000");
 
+		Subclas sc1 = new Subclas();
+		sc1.setSub("M1");
+		s.setSubclas(sc1);
+
 		try {
 			entityManager.persist(s);
 			entityManager.flush();
@@ -107,6 +120,10 @@ public class DemoApplicationTests {
 		s.setFirstName("Abcd");
 		s.setLastName("Abcd");
 		s.setStudentId("Z590123");
+
+		Subclas sc1 = new Subclas();
+		sc1.setSub("M1");
+		s.setSubclas(sc1);
 
 		try {
 			entityManager.persist(s);
@@ -127,6 +144,10 @@ public class DemoApplicationTests {
 		s.setLastName("Abcd");
 		s.setStudentId("Z59012A4");
 
+		Subclas sc1 = new Subclas();
+		sc1.setSub("M1");
+		s.setSubclas(sc1);
+
 		try {
 			entityManager.persist(s);
 			entityManager.flush();
@@ -145,6 +166,9 @@ public class DemoApplicationTests {
 		s1.setFirstName("Abcd");
 		s1.setLastName("Abcd");
 		s1.setStudentId("B5900000");
+		Subclas sc1 = new Subclas();
+		sc1.setSub("M1");
+		s1.setSubclas(sc1);
 		entityManager.persist(s1);
 		entityManager.flush();
 
@@ -152,6 +176,7 @@ public class DemoApplicationTests {
 		s2.setFirstName("Defg");
 		s2.setLastName("Defg");
 		s2.setStudentId("B5900000");
+		s2.setSubclas(sc1);
 
 		entityManager.persist(s2);
 		entityManager.flush();

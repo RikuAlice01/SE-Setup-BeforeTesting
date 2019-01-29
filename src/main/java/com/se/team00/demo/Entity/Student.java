@@ -1,5 +1,8 @@
 package com.se.team00.demo.Entity;
 
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -10,6 +13,7 @@ import lombok.*;
 import javax.persistence.SequenceGenerator;
 import java.lang.annotation.Annotation;
 import javax.validation.constraints.*;
+import javax.persistence.FetchType;
 
 @Data
 @Entity
@@ -29,5 +33,9 @@ public class Student {
     @NotNull(message = "lastName cannot be null")
     private  String lastName;
 
+    @NotNull(message = "Subclas cannot be null")
+    @ManyToOne(fetch = FetchType.EAGER, targetEntity = Subclas.class)
+    @JoinColumn(name = "S_ID", insertable = true)
+    private  Subclas subclas;
 
 } 
