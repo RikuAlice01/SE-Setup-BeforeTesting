@@ -33,7 +33,7 @@ public class DemoApplication {
 				Stream.of("B5720651").forEach(studentId -> {
 				Student student = new Student();
 				student.setStudentId(studentId);
-				student.setLastName("sit");
+				student.setLastName("สิทธิชัย");
 				student.setFirstName("siri");
 				student.setSubclas(sc1);
 				studentRepository.save(student);

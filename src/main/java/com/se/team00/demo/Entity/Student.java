@@ -28,6 +28,7 @@ public class Student {
     private String studentId;
 
     @NotNull(message = "firstName cannot be null")
+    @Pattern(regexp="[^\\u0E00-\\u0E7F]+")
     private  String firstName;
 
     @NotNull(message = "lastName cannot be null")
